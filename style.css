@@ -156,10 +156,11 @@ button:focus-visible {
   font-family: var(--display);
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(2.25rem, 9vw, 6.5rem);
+  font-size: clamp(2.5rem, 11vw, 8rem);
   line-height: 1;
   letter-spacing: -0.02em;
   margin: 0;
+  text-align: center;
   white-space: nowrap;
 }
 
