@@ -78,8 +78,16 @@ button:focus-visible {
   border-bottom: 1px solid var(--ink);
 }
 
+.masthead__mark {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+}
+
 .masthead__nameplate {
   display: block;
+  font-family: var(--display);
   font-style: italic;
   font-size: clamp(1.5rem, 3.2vw, 2.25rem);
   line-height: 1;
@@ -164,10 +172,18 @@ button:focus-visible {
   white-space: nowrap;
 }
 
+.cover__tagline {
+  max-width: 34rem;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(1.0625rem, 2vw, 1.25rem);
+  color: var(--muted);
+}
+
 /* cover lines — the magazine teaser rail */
 .coverlines {
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   border-top: 1px solid var(--ink);
   max-width: 30rem;
@@ -444,6 +460,23 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 0.75rem 2rem;
   justify-content: space-between;
+}
+
+.foot__social {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.foot__social a {
+  display: inline-flex;
+  color: var(--ink);
+}
+
+.foot__social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 .foot a:hover {
