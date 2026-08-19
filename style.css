@@ -1,0 +1,501 @@
+/* ============================================================
+   PERSONAL SITE — editorial / fashion-masthead direction
+   Palette:  paper #FFFFFF · ink #0A0A0A · oxblood #6E0A1E
+             rule #D8D4D4 · muted #8A8A8A
+   Type:     Times New Roman in three roles —
+             DISPLAY (huge italic) · BODY (regular) · UTILITY (small caps, tracked)
+   ============================================================ */
+
+:root {
+  --paper: #ffffff;
+  --ink: #0a0a0a;
+  --oxblood: #6e0a1e;
+  --rule: #d8d4d4;
+  --muted: #8a8a8a;
+
+  --serif: "Times New Roman", Times, serif;
+
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+  --measure: 34rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--oxblood);
+  outline-offset: 3px;
+}
+
+/* ---------- utility type role ---------- */
+
+.utility {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ---------- masthead + nav ---------- */
+
+.masthead {
+  padding: 1.25rem var(--gutter) 0;
+}
+
+.masthead__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--ink);
+}
+
+.masthead__nameplate {
+  display: block;
+  font-style: italic;
+  font-size: clamp(1.5rem, 3.2vw, 2.25rem);
+  line-height: 1;
+  padding: 1rem 0 0.9rem;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 2.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav a {
+  font-size: 0.75rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.nav a:hover {
+  color: var(--oxblood);
+  border-bottom-color: var(--oxblood);
+}
+
+.nav a[aria-current="page"] {
+  color: var(--oxblood);
+  border-bottom-color: var(--oxblood);
+}
+
+/* ---------- shared page shell ---------- */
+
+.page {
+  padding: clamp(2.5rem, 7vw, 5.5rem) var(--gutter) 0;
+}
+
+.page__eyebrow {
+  margin: 0 0 0.5rem;
+}
+
+.page__title {
+  font-style: italic;
+  font-weight: normal;
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  line-height: 0.95;
+  margin: 0 0 2.5rem;
+  letter-spacing: -0.02em;
+}
+
+.prose p {
+  max-width: var(--measure);
+}
+
+.prose a {
+  border-bottom: 1px solid var(--oxblood);
+  color: var(--oxblood);
+}
+
+/* ---------- COVER (home page signature) ---------- */
+
+.cover {
+  min-height: 68vh;
+  padding: clamp(2rem, 6vw, 4rem) var(--gutter) clamp(3rem, 8vw, 6rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-content: start;
+}
+
+.cover__name {
+  font-style: italic;
+  font-weight: normal;
+  font-size: clamp(3.25rem, 15vw, 10rem);
+  line-height: 0.86;
+  letter-spacing: -0.035em;
+  margin: 0;
+}
+
+.cover__name em {
+  font-style: normal;
+}
+
+.cover__tagline {
+  max-width: 30rem;
+  font-size: clamp(1.0625rem, 2vw, 1.375rem);
+  margin: 1.25rem 0 0;
+}
+
+/* cover lines — the magazine teaser rail */
+.coverlines {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+  max-width: 30rem;
+}
+
+.coverlines li {
+  border-bottom: 1px solid var(--rule);
+}
+
+.coverlines a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.1rem 0;
+}
+
+.coverlines a:hover .coverlines__title {
+  color: var(--oxblood);
+}
+
+.coverlines__title {
+  font-style: italic;
+  font-size: clamp(1.5rem, 4vw, 2.125rem);
+  line-height: 1.1;
+  transition: color 0.18s ease;
+}
+
+.coverlines__folio {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+  white-space: nowrap;
+}
+
+@media (min-width: 60rem) {
+  .cover {
+    grid-template-columns: 1.35fr 1fr;
+    align-items: end;
+  }
+}
+
+/* ---------- ABOUT ---------- */
+
+.about {
+  display: grid;
+  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: 1fr;
+}
+
+.portrait {
+  border: 1px solid var(--rule);
+  aspect-ratio: 3 / 4;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  text-align: center;
+  padding: 1rem;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait figcaption {
+  margin-top: 0.6rem;
+}
+
+@media (min-width: 55rem) {
+  .about {
+    grid-template-columns: 20rem 1fr;
+  }
+}
+
+/* interests — hairline index */
+.index-list {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+  max-width: var(--measure);
+}
+
+.index-list li {
+  display: flex;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.index-list dfn {
+  font-style: italic;
+  font-size: 1.25rem;
+  flex: 0 0 9rem;
+}
+
+.index-list span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- RESUME ---------- */
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--oxblood);
+  color: var(--paper);
+  padding: 0.7rem 1.6rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1px solid var(--oxblood);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.btn:hover {
+  background: var(--paper);
+  color: var(--oxblood);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.btn--ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.cv-section {
+  border-top: 1px solid var(--ink);
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+  max-width: 46rem;
+}
+
+.cv-section > h2 {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: var(--oxblood);
+  margin: 0 0 1.5rem;
+}
+
+.entry {
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.entry__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.entry__role {
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0;
+  font-weight: normal;
+}
+
+.entry__where {
+  margin: 0.2rem 0 0.7rem;
+  color: var(--muted);
+}
+
+.entry ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  max-width: var(--measure);
+}
+
+.entry li {
+  margin-bottom: 0.35rem;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.skills li {
+  border: 1px solid var(--rule);
+  padding: 0.35rem 0.85rem;
+  font-size: 0.9rem;
+}
+
+/* ---------- PROJECTS ---------- */
+
+.work {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.work__item {
+  border-bottom: 1px solid var(--rule);
+  padding: clamp(1.5rem, 4vw, 2.75rem) 0;
+  display: grid;
+  gap: 0.75rem 2.5rem;
+  grid-template-columns: 1fr;
+}
+
+.work__folio {
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--oxblood);
+}
+
+.work__title {
+  font-style: italic;
+  font-weight: normal;
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  line-height: 1.05;
+  margin: 0 0 0.6rem;
+}
+
+.work__body p {
+  margin: 0 0 0.9rem;
+  max-width: var(--measure);
+}
+
+.work__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+}
+
+.work__meta a {
+  color: var(--oxblood);
+  border-bottom: 1px solid var(--oxblood);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 48rem) {
+  .work__item {
+    grid-template-columns: 6rem 1fr;
+  }
+}
+
+/* ---------- footer ---------- */
+
+.foot {
+  margin-top: clamp(4rem, 10vw, 8rem);
+  padding: 1.25rem var(--gutter) 2.5rem;
+  border-top: 1px solid var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  justify-content: space-between;
+}
+
+.foot a:hover {
+  color: var(--oxblood);
+}
+
+/* ---------- motion ---------- */
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+.rise--2 { animation-delay: 0.1s; }
+.rise--3 { animation-delay: 0.2s; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---------- print (so Ctrl+P of the resume page looks right) ---------- */
+
+@media print {
+  .masthead__meta,
+  .nav,
+  .resume-actions,
+  .foot {
+    display: none;
+  }
+  body {
+    font-size: 11pt;
+  }
+}

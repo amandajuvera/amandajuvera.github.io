@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Amanda Juvera</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead__meta utility">
+    <span>Amanda Juvera</span>
+    <span>Projects</span>
+  </div>
+  <a class="masthead__nameplate" href="index.html">Amanda Juvera</a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="resume.html">Resume</a>
+    <a href="projects.html" aria-current="page">Projects</a>
+  </nav>
+</header>
+
+<main class="page">
+  <p class="page__eyebrow utility">Selected work</p>
+  <h1 class="page__title">Projects</h1>
+
+  <ol class="work">
+    <li class="work__item">
+      <span class="work__folio">No. 01</span>
+      <div class="work__body">
+        <h2 class="work__title">Navi</h2>
+        <p class="utility" style="margin-bottom:0.9rem;">In progress &nbsp;&middot;&nbsp; TypeScript, React, PostgreSQL/PostGIS, Mapbox</p>
+        <p>A navigation app built around an &ldquo;on the way&rdquo; search that ranks stops by real detour cost rather than straight-line distance. It buffers the route polyline into a corridor with PostGIS and computes added travel time for each candidate stop, so the results reflect what a detour actually costs you.</p>
+        <p>It also includes a fuel-stop scheduler that takes tank capacity, MPG, and a reserve threshold and recommends where to stop &mdash; with selectable strategies for fewest stops versus lowest total cost.</p>
+        <div class="work__meta">
+          <a href="[https://github.com/username/navi]">Source</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="work__item">
+      <span class="work__folio">No. 02</span>
+      <div class="work__body">
+        <h2 class="work__title">Social Media Analytics Pipeline</h2>
+        <p class="utility" style="margin-bottom:0.9rem;">Python, Notion API, GitHub Actions, LiveDune API</p>
+        <p>A nightly automation that ingests third-party marketing data into a client's Notion workspace, modeling records as Notion databases and handling API pagination, schema mapping, and rate limits.</p>
+        <p>Runs unattended on dual cron schedules with encrypted secrets, which saved a social media company more than five hours a week of manual reporting.</p>
+        <div class="work__meta">
+          <a href="[https://github.com/username/repo]">Source</a>
+        </div>
+      </div>
+    </li>
+
+    <li class="work__item">
+      <span class="work__folio">No. 03</span>
+      <div class="work__body">
+        <h2 class="work__title">Operating System Components</h2>
+        <p class="utility" style="margin-bottom:0.9rem;">C++</p>
+        <p><strong>Network file server</strong> &mdash; a concurrent, crash-consistent server over TCP sockets, using fine-grained reader-writer locking with hand-over-hand traversal and ordered disk writes to preserve metadata invariants.</p>
+        <p><strong>Virtual memory manager</strong> &mdash; a demand-paged system with swap- and file-backed pages, copy-on-write <code>fork()</code>, and clock page replacement to minimize disk I/O.</p>
+        <p><strong>Thread library</strong> &mdash; preemptive kernel-level threading across multiple CPUs with ucontext switching, mutexes, condition variables, and interrupt-safe synchronization.</p>
+      </div>
+    </li>
+  </ol>
+</main>
+
+<footer class="foot utility">
+  <span>&copy; 2026 Amanda Juvera</span>
+  <span>
+    <a href="mailto:ajuvera@umich.edu">Email</a> &nbsp;&middot;&nbsp;
+    <a href="https://linkedin.com/in/amandajuvera">LinkedIn</a> &nbsp;&middot;&nbsp;
+    <a href="https://github.com/amandajuvera">GitHub</a>
+  </span>
+</footer>
+
+</body>
+</html>
