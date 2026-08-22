@@ -136,6 +136,17 @@ button:focus-visible {
   background: var(--rule);
 }
 
+.page__eyebrow svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--oxblood);
+  fill: none;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
 .page__title {
   font-family: var(--display);
   font-style: italic;
@@ -165,9 +176,14 @@ button:focus-visible {
   color: var(--oxblood);
 }
 
+.signoff-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
 .signoff {
-  display: block;
-  margin-top: 2.5rem;
   font-family: var(--script);
   font-size: 2.75rem;
   color: var(--oxblood);
@@ -533,6 +549,107 @@ button:focus-visible {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* ---------- decorative: laurel sprig, terminal chip, section icons ---------- */
+
+.sprig {
+  width: 46px;
+  height: 20px;
+  stroke: var(--oxblood);
+  fill: none;
+  stroke-width: 1.1;
+  flex-shrink: 0;
+}
+
+.sprig--flip {
+  transform: scaleX(-1);
+}
+
+.terminal-chip {
+  display: inline-flex;
+  justify-self: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+}
+
+.terminal-chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--oxblood);
+  flex-shrink: 0;
+}
+
+.terminal-quote {
+  max-width: var(--measure);
+  border: 1px solid var(--ink);
+  margin: 2rem 0;
+}
+
+.terminal-quote__bar {
+  display: flex;
+  gap: 5px;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.terminal-quote__bar span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--rule);
+}
+
+.terminal-quote pre {
+  margin: 0;
+  padding: 1rem 1.25rem 1.25rem;
+  font-family: "SF Mono", "Menlo", "Consolas", monospace;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  color: var(--ink);
+}
+
+.terminal-quote pre .prompt {
+  color: var(--oxblood);
+}
+
+.section-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--oxblood);
+  fill: none;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.work__icon {
+  width: 22px;
+  height: 22px;
+  stroke: var(--oxblood);
+  fill: none;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -5px;
+  margin-right: 0.5rem;
 }
 
 /* ---------- print (so Ctrl+P of the resume page looks right) ---------- */
