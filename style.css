@@ -15,6 +15,7 @@
 
   --serif: "Times New Roman", Times, serif;
   --display: "Bodoni Moda", "Times New Roman", serif;
+  --script: "Pinyon Script", "Brush Script MT", cursive;
 
   --gutter: clamp(1.25rem, 5vw, 5rem);
   --measure: 34rem;
@@ -121,7 +122,17 @@ button:focus-visible {
 }
 
 .page__eyebrow {
-  margin: 0 0 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.page__eyebrow::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
 }
 
 .page__title {
@@ -138,8 +149,26 @@ button:focus-visible {
   max-width: var(--measure);
 }
 
+.prose p:first-of-type::first-letter {
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 4.5rem;
+  line-height: 0.7;
+  float: left;
+  margin: 0.1rem 0.5rem 0 0;
+  color: var(--oxblood);
+}
+
 .prose a {
   border-bottom: 1px solid var(--oxblood);
+  color: var(--oxblood);
+}
+
+.signoff {
+  display: block;
+  margin-top: 2.5rem;
+  font-family: var(--script);
+  font-size: 2.75rem;
   color: var(--oxblood);
 }
 
@@ -223,13 +252,17 @@ button:focus-visible {
 }
 
 .portrait {
-  border: 1px solid var(--rule);
+  position: relative;
+  border: 1px solid var(--ink);
+  outline: 1px solid var(--rule);
+  outline-offset: 6px;
   aspect-ratio: 3 / 4;
   display: grid;
   place-items: center;
   color: var(--muted);
   text-align: center;
   padding: 1rem;
+  margin: 6px;
 }
 
 .portrait img {
